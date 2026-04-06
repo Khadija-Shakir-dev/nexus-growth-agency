@@ -1,7 +1,7 @@
         const cursor = document.getElementById('cursor');
         const follower = document.getElementById('cursorFollower');
       
-        /* ===== THEME TOGGLE ===== */
+        /* THEME TOGGLE */
         const themeBtn = document.getElementById('theme-toggle');
         const body = document.body;
         const icon = themeBtn.querySelector('i');
@@ -22,7 +22,7 @@
             icon.classList.replace('fa-moon', 'fa-sun');
         }
 
-        /* ===== NAVBAR SCROLL ===== */
+        /*  NAVBAR SCROLL  */
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 40) {
@@ -45,7 +45,7 @@
 
         document.querySelectorAll('.reveal, .stagger-children').forEach(el => observer.observe(el));
 
-        /* ===== SMOOTH SCROLL ===== */
+        /*  SMOOTH SCROLL */
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -56,7 +56,7 @@
             });
         });
 
-        /* ===== CONTACT FORM ===== */
+        /*  CONTACT FORM  */
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = this.querySelector('button');
@@ -80,7 +80,7 @@
             }, 1500);
         });
 
-        /* ===== CARD MOUSE GLOW ===== */
+        /*  CARD MOUSE GLOW  */
         document.querySelectorAll('.card').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
@@ -91,7 +91,7 @@
             });
         });
 
-        /* ===== STAT COUNTER ANIMATION ===== */
+        /*  STAT COUNTER ANIMATION*/
         function animateCounter(el, target, suffix = '') {
             let current = 0;
             const increment = target / 60;
