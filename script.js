@@ -1,3 +1,37 @@
+* ── Sidebar toggle  */
+        const sidebar        = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const menuToggle     = document.getElementById('menuToggle');
+        const sidebarClose   = document.getElementById('sidebarClose');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';   // prevent bg scroll
+            sidebarClose.focus();
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            menuToggle.focus();
+        }
+
+        menuToggle.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        /* Close on Escape key */
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && sidebar.classList.contains('open')) closeSidebar();
+        });
+
+        /* Keyboard: open with Enter/Space on toggle */
+        menuToggle.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSidebar(); }
+        });
+
         const cursor = document.getElementById('cursor');
         const follower = document.getElementById('cursorFollower');
       
